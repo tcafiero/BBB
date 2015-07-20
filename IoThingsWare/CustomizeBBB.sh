@@ -1,4 +1,6 @@
-﻿sudo apt-get purge xrdp
+#!/bin/bash
+
+sudo apt-get purge xrdp
 
 sudo apt-get purge apache2 apache2-mpm-worker apache2-utils apache2.2-bin apache2.2-common
 sudo apt-get autoremove #get rid of no-longer needed dependencies
@@ -12,7 +14,6 @@ sudo rm -rf /opt/cloud9                       #source download and build directo
 sudo rm /etc/default/cloud9                   #environment variables
 sudo rm /lib/systemd/system/cloud9.*          #systemd scripts
 sudo systemctl daemon-reload                  #restart/reload systemctl deamon
-
 
 sudo systemctl stop bonescript-autorun.service        #stop currently running copy
 sudo systemctl stop bonescript.service
