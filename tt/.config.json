@@ -273,7 +273,7 @@
      ],
      "enabled": true,
      "module": "node-red-node-sensortag",
-     "file": "/usr/src/tt/node_modules/node-red-node-sensortag/79-sensorTag.js"
+     "file": "/usr/src/BBB/tt/node_modules/node-red-node-sensortag/79-sensorTag.js"
     }
    }
   },
