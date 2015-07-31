@@ -1,0 +1,31 @@
+#per vedere quali dispositivi USB sono attivi
+sudo lsusb
+
+#per vedere quali sono le seriali USB attive nel sistema
+ls -l /dev/ttyUSB*
+
+#strumento di verifica per controllo servizi attivi e su quali porte
+sudo apt-get install nmap
+sudo nmap -sT -O localhost
+
+#installare socat
+sudo apt-get update
+sudo apt-get install socat
+sudo socat -h
+
+#esempio di uso di socat
+#socat TCP-LISTEN:7777,fork /dev/ttyUSB0,raw,echo=0,b115200
+#su windows usare telnet
+#telnet <ipaddress> 7777
+
+#verificare installazione di ruby
+ruby --version
+
+#installare gherkin cucumber
+sudo gem install gherkin cucumber
+sudo cucumber --version
+
+#installare rspec
+sudo gem install rspec
+
+

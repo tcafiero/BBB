@@ -1,1 +1,2 @@
-cucumber -f html
+#!/bin/bash
+cucumber -f html > Report.html
