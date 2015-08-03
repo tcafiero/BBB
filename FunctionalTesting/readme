@@ -53,4 +53,33 @@ git add .
 git rm -r --cached <dir> (per cancellare nel repository una dir gia cancellata nel fs)
 git rm -r <dir> (per cancellare una dir nel repo e nel fs)
 
+#per usare FunctionalTesting su BBB
+#connettere BBB e prototipo su guida DIN con il cavo FTDI USB/serial
+
+#controllare che il servizio IoThingsWareSocat sia installato
+systemctl status IoThingsWareSocat.service
+
+#se non è ancora installato il servizio IoThingsWareSocat allora
+#copiase il file IoThingsWareSocat.service in /lib/systemd/ come segue
+cp /usr/src/BBB/FunctionalTesting/IoThingsWareSocat.service /lib/systemd/
+#poi creare il link come segue
+ln /lib/systemd/IoThingsWareSocat.service /etc/systemd/system/IoThingsWareSocat.service
+#poi istruire il sistema come specificato qui:
+systemctl daemon-reload
+systemctl enable IoThingsWareSocat.service
+systemctl start IoThingsWareSocat.service
+reboot
+#fine della procedura per installare IoThingsWareSocat service
+
+#controllare che il servizio IoThingsWareSocat sia installato ed attivo
+systemctl status IoThingsWareSocat.service
+
+#poi con usare telnet client su un'altra macchina connessa per controllare
+(su terminale di un'altra macchina connessa) telnet 192.168.7.2 7777
+
+#per attivare il testing
+cd /usr/src/BBB/FunctionalTesting/
+./Test.sh
+
+
 
