@@ -42,6 +42,7 @@ git rm <file>
 git add <file>
 git commit -m "Text"
 git remote -v
+git remote pull origin
 git remote push origin master
   user: tcafiero
   pwd: simone
