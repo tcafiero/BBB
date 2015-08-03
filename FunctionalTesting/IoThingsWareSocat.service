@@ -1,0 +1,10 @@
+[Unit]
+Description=IoThingsWare Socat Service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/src/BBB/FunctionalTesting/StartSocatService.sh
+
+[Install]
+WantedBy=multi-user.target
