@@ -28,4 +28,28 @@ sudo cucumber --version
 #installare rspec
 sudo gem install rspec
 
+#git commands
+git clone https://github.com/tcafiero/BBB.git
+git add -A
+git commit -m "Text"
+git push origin master
+  user: tcafiero
+  pwd: simone
+
+#git ordinaria amministrazione
+git status
+git rm <file>
+git add <file>
+git commit -m "Text"
+git remote -v
+git remote push origin master
+  user: tcafiero
+  pwd: simone
+
+#git per aggiungere e cancellare dir
+cd <dir>
+git add .
+git rm -r --cached <dir> (per cancellare nel repository una dir gia cancellata nel fs)
+git rm -r <dir> (per cancellare una dir nel repo e nel fs)
+
 
