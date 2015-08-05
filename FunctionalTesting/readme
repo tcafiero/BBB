@@ -81,5 +81,16 @@ systemctl status IoThingsWareSocat.service
 cd /usr/src/BBB/FunctionalTesting/
 ./Test.sh
 
-
+#per usare ssh (scp, telnet)
+1) generare le chiavi pubblica e privata che serviranno al client per accedere al server
+ssh-keygen -t rsa -C "<name>@<domain>"
+che chiavi che verranno generate di defaul sono inserite nella dir /<user>/.ssh a meno non si indichi una dir
+differente. Dalla procedura di generazione chiavi viene richiesta anche una Passphrase che puo essere lacsiata
+in bianco.
+2) aggiungere la riga della chiave pubblica al file /<user>/.ssh/authorized_keys
+3) modificare eventualmente il file /etc/ssh/sshd_config
+   StrictModes no
+   AuthorizedKeyFile %h/.ssh/authorized_keys
+   PasswordAuthentication no
+   
 
