@@ -1,0 +1,17 @@
+#MQTT Server su linux BBB
+
+#eventualmente gia presente eliminare mosquitto
+sudo apt-get purge mosquitto
+
+sudo apt-get install mosquitto
+sudo netstat -tulpn
+service mosquitto status
+#per abilitare|disabilitare|etc. (abilita e disabilita il servizio al boot)
+systemctl [enable|disable|status|start|stop|restart] mosquitto.service
+
+#per vedere le azioni ammesse da mosquitto: nano /etc/init.d/mosquitto
+/etc/init.d/mosquitto [start|stop|reload|restart|try-restart|status)
+service mosquitto [start|stop|reload|restart|try-restart|status]
+
+#per configurare mosquitto
+nano /etc/mosquitto/mosquitto.conf
