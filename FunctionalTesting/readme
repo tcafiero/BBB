@@ -46,6 +46,9 @@ git remote pull origin
 git remote push origin master
   user: tcafiero
   pwd: simone
+  
+#per annullare modifiche
+git checkout -- <file>.....
 
 #git per aggiungere e cancellare dir
 cd <dir>
