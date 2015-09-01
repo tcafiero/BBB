@@ -29,6 +29,29 @@ sudo cucumber --version
 #installare rspec
 sudo gem install rspec
 
+#installare lo stack BLE (raspberry pi)
+cd
+ls
+wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.32.tar.xz
+tar xf bluez-5.32.tar.xz
+cd bluez-5.32/
+./configure --prefix=/usr --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --with-systemdsystemunitdir --with-systemduserunitdir --enable-library
+ls
+sudo make
+sudo make install
+sudo hciconfig hci0 up
+sudo hcitool lescan
+
+#per far ripartire al boot lo stack ble
+sudo crontab -u root -e
+#aggiungere
+@reboot hciconfig hci0 up
+#salvare il file
+sudo reboot
+sudo hcitool lescan
+
+
+
 #git commands
 git clone https://github.com/tcafiero/BBB.git
 git add -A
