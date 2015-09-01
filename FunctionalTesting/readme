@@ -22,6 +22,7 @@ sudo socat -h
 ruby --version
 
 #installare gherkin cucumber
+sudo apt-get install ruby-dev
 sudo gem install gherkin cucumber
 sudo cucumber --version
 
