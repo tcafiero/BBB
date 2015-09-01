@@ -38,6 +38,7 @@ sudo npm install -g --unsafe-perm node-red
 #cd /usr/local/lib/node_modules/node-red
 
 #sudo npm install -g node-red-node-mongodb
+#sudo npm install -g node-red-node-sensortag
 
 
 
