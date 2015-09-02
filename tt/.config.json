@@ -264,7 +264,7 @@
   },
   "node-red-node-sensortag": {
    "name": "node-red-node-sensortag",
-   "version": "0.0.6",
+   "version": "0.0.7",
    "nodes": {
     "sensortTag": {
      "name": "sensortTag",
@@ -273,7 +273,7 @@
      ],
      "enabled": true,
      "module": "node-red-node-sensortag",
-     "file": "/usr/src/BBB/tt/node_modules/node-red-node-sensortag/79-sensorTag.js"
+     "file": "/usr/local/lib/node_modules/node-red/node_modules/node-red-node-sensortag/79-sensorTag.js"
     }
    }
   },
@@ -323,26 +323,9 @@
     }
    }
   },
-  "node-red-node-serialport": {
-   "name": "node-red-node-serialport",
-   "version": "0.0.2",
-   "nodes": {
-    "serialport": {
-     "name": "serialport",
-     "types": [
-      "serial in",
-      "serial out",
-      "serial-port"
-     ],
-     "enabled": true,
-     "module": "node-red-node-serialport",
-     "file": "/usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/25-serial.js"
-    }
-   }
-  },
   "node-red-node-twitter": {
    "name": "node-red-node-twitter",
-   "version": "0.1.0",
+   "version": "0.1.1",
    "nodes": {
     "twitter": {
      "name": "twitter",
@@ -370,7 +353,7 @@
      ],
      "enabled": true,
      "module": "node-red-node-mongodb",
-     "file": "/usr/local/lib/node_modules/node-red-node-mongodb/66-mongodb.js"
+     "file": "/usr/local/lib/node_modules/node-red/node_modules/node-red-node-mongodb/66-mongodb.js"
     }
    }
   }

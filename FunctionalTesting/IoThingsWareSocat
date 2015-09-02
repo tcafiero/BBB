@@ -1,0 +1,29 @@
+#!/bin/bash
+# /etc/init.d/IoThingsWareSocat
+
+### BEGIN INIT INFO
+# Provides:          servoblaster
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Example initscript
+# Description:       This service is used to manage a servo
+### END INIT INFO
+
+
+case "$1" in
+    start)
+        echo "Starting IoThingsWareSocat"
+        /usr/src/BBB/FunctionalTesting/StartSocatService.sh
+        ;;
+    stop)
+        echo "Stopping IoThingsWareSocat"
+        killall IoThingsWareSocat
+        ;;
+    *)
+        echo "Usage: /etc/init.d/IoThingsWareSocat start|stop"
+        exit 1
+        ;;
+esac
+
