@@ -101,6 +101,56 @@ reboot
 #controllare che il servizio IoThingsWareSocat sia installato ed attivo
 systemctl status IoThingsWareSocat.service
 
+#sul sistema raspberry pi non è presente systemctl
+#quindi prodecere come segue
+sudo nano /usr/src/BBB/FunctionalTesting/IoThingsWareSocat
+(contenuto del file)
+#!/bin/bash
+# /etc/init.d/IoThingsWareSocat
+
+### BEGIN INIT INFO
+# Provides:          servoblaster
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Example initscript
+# Description:       This service is used to manage a servo
+### END INIT INFO
+
+
+case "$1" in
+    start)
+        echo "Starting IoThingsWareSocat"
+        /usr/src/BBB/FunctionalTesting/StartSocatService.sh
+        ;;
+    stop)
+        echo "Stopping IoThingsWareSocat"
+        killall IoThingsWareSocat
+        ;;
+    *)
+        echo "Usage: /etc/init.d/IoThingsWareSocat start|stop"
+        exit 1
+        ;;
+esac
+
+sudo nano /usr/src/BBB/FunctionalTesting/StartSocatService.sh
+(contenuto del file)
+#!/bin/bash
+socat TCP-LISTEN:7777,fork /dev/ttyUSB0,raw,echo=0,b115200 &
+
+
+sudo cp /usr/src/BBB/FunctionalTesting/IoThingsWareSocat /etc/init.d/
+
+#per far partire al boot il servizio IoThingsWareSocat
+sudo update-rc.d IoThingsWareSocat defaults
+
+#cio' crea un link a /etc/init.d/IoThingsWareSocat nelle dir da /etc/rc0.d a /etc/rc6.d. Quando
+#linux parte o si ferma esso guarda in queste cartelle per vedere se ci sono scripts o programmi che
+#devono partire. Quindi quando il sistema riparte il programma IoThingsWareSocat parte automaticamente.
+
+
+
 #poi con usare telnet client su un'altra macchina connessa per controllare
 (su terminale di un'altra macchina connessa) telnet 192.168.7.2 7777
 
