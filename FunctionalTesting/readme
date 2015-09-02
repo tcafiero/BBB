@@ -62,6 +62,9 @@ subnet 192.168.16.0 netmask 255.255.255.0 {
 }
 
 sudo service isc-dhcp-server restart
+#per vedere quali indirizzi sono stati rilasciati
+cat /var/lib/dhcp/dhcpd.leases
+
 
 #installare lo stack BLE (raspberry pi)
 #vedi tutorial IBM https://developer.ibm.com/recipes/tutorials/ti-sensor-tag-and-raspberry-pi/
