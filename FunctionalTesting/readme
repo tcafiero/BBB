@@ -196,6 +196,18 @@ sudo update-rc.d IoThingsWareSocat defaults
 cd /usr/src/BBB/FunctionalTesting/
 ./Test.sh
 
+#installare node-red
+sudo npm install -g --unsafe-perm node-red
+
+#per installare moduli di node-red
+cd /usr/local/lib/node-modules/node-red
+sudo npm install <node-module>
+
+#installare node-red-node-serialport node-red 
+cd ~/.node-red
+sudo npm install -g --unsafe-perm node-red-node-serialport
+
+
 #per usare ssh (scp, telnet)
 1) generare le chiavi pubblica e privata che serviranno al client per accedere al server
 ssh-keygen -t rsa -C "<name>@<domain>"
